@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            margin: 0px;
+            font-size: 24px;
+            flex-direction: column ;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function calculate() {
+            let leftInput = document.getElementById('leftInput').value;
+            let rightInput = document.getElementById('rightInput').value;
+            let operator = document.getElementById('operator').value;
+
+            let leftInputNum = parseInt(leftInput);
+            let rightInputNum = parseInt(rightInput);
+
+            if (!Number.isInteger(Number(leftInput)) || !Number.isInteger(Number(rightInput)) || leftInput < 0 || rightInput < 0) {
+                alert('Error :(');
+                console.log('Error :(');
+                return;
+            }
+
+            if ((operator === '/' || operator === '%') && rightInput == 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+                return;
+            }
+
+            let result;
+            switch (operator) {
+                case '+': result = parseInt(leftInput) + parseInt(rightInput); break;
+                case '-': result = parseInt(leftInput) - parseInt(rightInput); break;
+                case '*': result = parseInt(leftInput) * parseInt(rightInput); break;
+                case '/': result = parseInt(leftInput) / parseInt(rightInput); break;
+                case '%': result = parseInt(leftInput) % parseInt(rightInput); break;
+                default: return;
+            }
+
+            alert("Result: " + result);
+            console.log("Result: " + result);
+        }
+
+        setInterval(() => {
+            alert("Please, use me...");
+        }, 30000);
+    </script>
+
+    <h1>Calculator</h1>
+    <div>
+        <input type="text" id="leftInput" placeholder="leftInput operand">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="rightInput" placeholder="rightInput operand">
+        <input type="button" value="Try me!" onclick="calculate()">
+    </div>
+</body>
+</html>
