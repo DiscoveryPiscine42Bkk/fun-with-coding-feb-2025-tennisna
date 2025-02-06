@@ -1,0 +1,21 @@
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+}
+h2{
+    font-size: 24px;
+    margin-top: 10px;
+}
+button{
+    background-color: brown;
+    color: aliceblue;
+    border: none; /*ขอบ*/
+    padding: 10px 20px; /* ระยะห้าง บน-ล่าง ซ้าย-ขวา ข้างใน */
+    text-align: center;
+    cursor: pointer; /*เปลี่ยนเคอร์เซอร์เป็นรูปแบบมือชี้ */
+    border-radius: 5px;
+}
