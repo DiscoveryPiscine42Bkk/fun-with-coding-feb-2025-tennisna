@@ -1,0 +1,48 @@
+/* Reset default margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 5px;
+}
+
+/* Parallax sections */
+.parallax {
+    position: relative;
+    height: 100vh; /* Full screen height */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+/* First image */
+.first-image {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Charles_Leclerc_2022.jpg/413px-Charles_Leclerc_2022.jpg')
+}
+
+/* Second image */
+.second-image {
+    background-image: url('https://scontent.fbkk22-1.fna.fbcdn.net/v/t39.30808-6/324677843_507194384857447_5371485582732220423_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGEB_4oJvIdp9cSjZvSMCRobx1q5EHkFTxvHWrkQeQVPABu51SSJOZBB3nElyGV2xWDnXx43lgJfkQstJEQAjYf&_nc_ohc=lr2f3upSJSAQ7kNvgGWAGLE&_nc_zt=23&_nc_ht=scontent.fbkk22-1.fna&_nc_gid=A73QmKRNzoN3uI9_yqy6T4A&oh=00_AYAyI9C9gWlWyg964uPrKKmZTo0nXVes0ozNkM0SMbrcSA&oe=67A7B60A')
+}
+
+/* Text styling for parallax sections */
+.text {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Black section */
+.black-section {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 100px;
+    font-size: 1.5rem;
+}
