@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="balloon"></div>
+    <script>
+        const balloon = document.getElementById('balloon');
+        const colors = ['red', 'green', 'blue'];
+        let currentColorIndex = 0;
+        let balloonSize = 200; // ใช้ตัวแปรเก็บขนาดเอง
+
+        balloon.addEventListener('click', () => {
+            balloonSize += 10; // เพิ่มขนาดทีละ 10px
+            if (balloonSize > 420) {
+                balloonSize = 200; // รีเซ็ตขนาดถ้าเกิน 420px
+                currentColorIndex = 0;
+            } else {
+                currentColorIndex = (currentColorIndex + 1) % colors.length;
+            }
+            balloon.style.width = balloonSize + 'px';
+            balloon.style.height = balloonSize + 'px';
+            balloon.style.backgroundColor = colors[currentColorIndex];
+        });
+
+        balloon.addEventListener('mouseleave', () => {
+            balloonSize = Math.max(200, balloonSize - 5); // ลดขนาดทีละ 5px แต่ไม่ต่ำกว่า 200px
+            currentColorIndex = (currentColorIndex - 1 + colors.length) % colors.length;
+            balloon.style.width = balloonSize + 'px';
+            balloon.style.height = balloonSize + 'px';
+            balloon.style.backgroundColor = colors[currentColorIndex];
+        });
+    </script>
+</body>
+</html>
